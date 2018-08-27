@@ -1,0 +1,24 @@
+Products:
+ - Name: logic
+   DisplayName: Logic API
+   SubscriptionApprovalRequired: true
+   PoliciesXmlFile: ./products/logic/policies.xml
+   Description: |
+     The logic product allows you to use the Logic API(s)
+     according to your legal contract. A legal contract
+     between KMD and your company is requied before you can use this product.
+   SubscriptionTerms: |
+     These are the subscription terms.
+
+Apis:
+
+ - Name: Logic
+   Path: logic
+   DisplayName: Logic API
+   Description: Logic API allows 3rd parties to interact with Logic and associated graph products.
+   Versions:
+    - PathIdentifier: v1
+      ProductNames: [logic]
+      OpenApiSpecFile: ./apis/logic/logic-v1.yml
+      PoliciesXmlFile: ./apis/logic/logic-v1-policies.xml
+      PortalImageFile: ./apis/logic/logic-v1.png

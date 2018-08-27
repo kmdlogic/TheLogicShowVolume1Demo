@@ -1,0 +1,24 @@
+<policies>
+  <inbound>
+    <validate-jwt header-name="Authorization" require-scheme="Bearer" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized">
+      <openid-config url="{{logic-openid-baseurl}}/.well-known/openid-configuration" />
+      <audiences>
+        <audience>logic</audience>
+      </audiences>
+    </validate-jwt>
+    <set-header name="Ocp-Apim-Trace" exists-action="delete" />
+    <set-header name="Ocp-Apim-Subscription-Key" exists-action="delete" />
+    <redirect-content-urls />
+    <base />
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <redirect-content-urls />
+    <base />
+  </outbound>
+  <on-error>
+    <base />
+  </on-error>
+</policies>
